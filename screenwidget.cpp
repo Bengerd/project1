@@ -59,7 +59,7 @@ void ScreenWidget::paintGL()
     m_program->bind();
      {
        m_object.bind();
-       glDrawArrays(GL_TRIANGLE_FAN, 0, sizeof(sg_vertexes) / sizeof(sg_vertexes[0]));
+       glDrawArrays(GL_TRIANGLES, 0, sizeof(sg_vertexes) / sizeof(sg_vertexes[0]));
        m_object.release();
      }
      m_program->release();
