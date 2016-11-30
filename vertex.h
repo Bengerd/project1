@@ -39,7 +39,7 @@ Q_DECL_CONSTEXPR inline Vertex::Vertex(const QVector3D &position, const QVector3
 Q_DECL_CONSTEXPR inline const QVector3D& Vertex::position() const { return m_position; }
 Q_DECL_CONSTEXPR inline const QVector3D& Vertex::color() const { return m_color; }
 void inline Vertex::setPosition(const QVector3D& position) { m_position = position; }
-void inline Vertex::setColor(const QVector3D& color) { m_color = color; }
+void inline Vertex::setColor(const QVector3D &color) { m_color = color; }
 
 // OpenGL Helpers
 Q_DECL_CONSTEXPR inline int Vertex::positionOffset() { return offsetof(Vertex, m_position); }

@@ -2,11 +2,11 @@
 #include <QOpenGLShaderProgram>
 #include "vertex.h"
 
-// Create a colored triangle
+// Create a triangle
 static const Vertex sg_vertexes[] = {
-  Vertex( QVector3D( 0.00f,  0.75f, 1.0f), QVector3D(1.0f, 0.0f, 0.0f) ),
-  Vertex( QVector3D( 0.75f, -0.75f, 1.0f), QVector3D(0.0f, 1.0f, 0.0f) ),
-  Vertex( QVector3D(-0.75f, -0.75f, 1.0f), QVector3D(0.0f, 0.0f, 1.0f) )
+  Vertex( QVector3D( 0.00f,  0.75f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f) ),
+  Vertex( QVector3D( 0.75f, -0.75f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f) ),
+  Vertex( QVector3D(-0.75f, -0.75f, 1.0f), QVector3D(0.0f, 0.0f, 0.0f) )
 };
 
 void ScreenWidget::initializeGL()
@@ -59,7 +59,7 @@ void ScreenWidget::paintGL()
     m_program->bind();
      {
        m_object.bind();
-       glDrawArrays(GL_TRIANGLES, 0, sizeof(sg_vertexes) / sizeof(sg_vertexes[0]));
+       glDrawArrays(GL_LINE_LOOP, 0, sizeof(sg_vertexes) / sizeof(sg_vertexes[0]));
        m_object.release();
      }
      m_program->release();
